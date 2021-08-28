@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "command": "bash",
+    "args": [
+        "-c"
+    ],
+    "tasks": [
+        {
+            "label": "Build program",
+            "dependsOn": [
+                "Compile C++"
+            ]
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile C++",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-lboost_serialization",
+                "-std=c++17",
+                "-O3",
+                "-g",
+                "${workspaceFolder}/src/Network.cpp",
+                "${workspaceFolder}/src/Backpropagation.cpp",
+                "${workspaceFolder}/src/main.cpp",
+                "-o",
+                "${workspaceFolder}/bin/x64/MachineLearning"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
