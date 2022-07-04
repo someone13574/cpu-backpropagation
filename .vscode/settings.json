@@ -1,0 +1,6 @@
+{
+    "C_Cpp.clang_format_sortIncludes": true,
+    "files.associations": {
+        "random": "cpp"
+    }
+}
